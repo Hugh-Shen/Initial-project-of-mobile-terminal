@@ -1,0 +1,21 @@
+/* 颜色 */
+$color-white: white;
+$color-pink: pink;
+$color-theme: #007fff;
+
+/* 默认文字大小 */
+$font-base: 24px;
+$font-large: 30px;
+$color-little: 20px;
+$font-weight: 700;
+
+/* 页面初始样式 */
+@mixin init-page($width:100%, $height:100%, $fontSize:$font-base) {
+  width: $width;
+  height: $height;
+  overflow: hidden;
+  overflow-y: auto;
+  font-size: $fontSize;
+  box-sizing: border-box;
+  background: #efefef;
+}

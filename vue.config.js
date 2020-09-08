@@ -11,6 +11,10 @@ module.exports = {
     open: true,
     hot: true
   },
+  chainWebpack: config => {
+    config.resolve.alias
+      .set("@", resolve("src"))
+  },
   configureWebpack: config => {
     if(process.env.NODE_ENV === 'development') {
       config.plugins.push(new VConsole({
@@ -23,7 +27,8 @@ module.exports = {
     "style-resources-loader": {
       preProcessor: "scss",
       patterns: [
-        resolve('./src/assets/styles/_reset.scss')
+        resolve('src/assets/styles/_reset.scss'),
+        resolve('src/assets/styles/_variable.scss')
       ]
     }
   }
