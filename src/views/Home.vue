@@ -1,39 +1,26 @@
 <template>
   <div class="home">
-    <h1>flex layout</h1>
-    <div class="flex-container">
-      <div>children one</div>
-      <div>children two</div>
-      <div class="flex-container-children">
-        <span>hello</span>
-        <span>flex</span>
-      </div>
-    </div>
+    <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
+      <van-swipe-item>1</van-swipe-item>
+      <van-swipe-item>2</van-swipe-item>
+      <van-swipe-item>3</van-swipe-item>
+      <van-swipe-item>4</van-swipe-item>
+    </van-swipe>
   </div>
 </template>
+
+<script lang="ts">
+  import { Component, Vue } from 'vue-property-decorator'
+  import { imageInterface } from '@/utils/commonInterface'
+
+  @Component
+  export default class Home extends Vue {
+
+  }
+</script>
 
 <style lang="scss" scoped>
 .home {
   @include init-page();
-  text-align: center;
-  & > h1 {
-    font-weight: $font-weight;
-    padding: 30px 0;
-    background: $color-pink;
-    font-size: $font-large;
-  }
-  .flex-container {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    background: $color-white;
-    & > div {
-      flex-grow: 1;
-    }
-    & > div:nth-child(3) {
-      align-self: flex-end;
-    }
-  }
 }
 </style>

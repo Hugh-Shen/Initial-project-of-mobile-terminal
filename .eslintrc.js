@@ -16,7 +16,9 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     "no-var": 0,
     'semi': 0,
-    "computed-property-spacing": [1,"never"],
-    "comma-dangle": [2, "never"]
+    "indent": ["off", 2],
+    "comma-dangle": [2, "never"],
+    "array-bracket-spacing": ["error","always"],
+    "object-curly-spacing": ["error","always"]
   }
 };
