@@ -1,12 +1,11 @@
 import Vue from 'vue';
-import { Swipe, SwipeItem } from 'vant';
+import { Icon, Field } from 'vant';
 
 import App from './App.vue';
 import router from './router';
 import store from './store';
 
-
-Vue.use(Swipe).use(SwipeItem)
+Vue.use(Icon).use(Field)
 
 /* eslint-disable no-new */
 
