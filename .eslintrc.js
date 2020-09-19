@@ -19,6 +19,8 @@ module.exports = {
     "indent": ["off", 2],
     "comma-dangle": [2, "never"],
     "global-require": 0,
+    "class-methods-use-this": "off",
+    "lines-between-class-members": ["error", "always", { exceptAfterSingleLine: true }],
     "linebreak-style": [0 ,"error", "windows"],
     "array-bracket-spacing": ["error","always"],
     "object-curly-spacing": ["error","always"],

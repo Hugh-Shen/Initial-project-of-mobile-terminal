@@ -1,6 +1,6 @@
-import axios from "axios";
-import { getToken } from "@/utils/auth";
-import { Toast } from "vant";
+import axios from 'axios';
+import { getToken } from '@/utils/auth';
+import { Toast } from 'vant';
 
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_URL,
@@ -10,9 +10,9 @@ const service = axios.create({
 // request interceptor
 service.interceptors.request.use(
   (config: any) => {
-    let token = getToken();
+    const token = getToken();
     if (token) {
-      config.headers["Authorization"] = token
+      config.headers.Authorization = token
     }
     return config;
   },
@@ -28,16 +28,15 @@ service.interceptors.response.use(
     const res = response.data;
 
     if (res.code !== 0) {
-      Toast.fail(res.msg || "Error");
-      return Promise.reject(new Error(res.msg || "Error"));
-    } else {
-      return res;
+      Toast.fail(res.msg || 'Error');
+      return Promise.reject(new Error(res.msg || 'Error'));
     }
+      return res;
   },
   (error: any) => {
-    console.log("err" + error); // for debug
+    console.log(`err${error}`); // for debug
 
-    Toast.fail(error.msg || "Error");
+    Toast.fail(error.msg || 'Error');
     return Promise.reject(error);
   }
 );

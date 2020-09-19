@@ -6,4 +6,3 @@ export interface UserRequest {
   avatar: string,
   nickName: string
 }
-
